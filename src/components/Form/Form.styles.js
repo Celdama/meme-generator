@@ -19,13 +19,14 @@ export const Content = styled.div`
     div {
       display: flex;
       justify-content: space-between;
-      gap: 6px;
+      gap: 12px;
 
       input {
         width: 50%;
         height: 35px;
         border-radius: 5px;
         border: 1px solid #d5d4d8;
+        text-indent: 5px;
       }
     }
   }
@@ -38,4 +39,7 @@ export const Button = styled.button`
   width: 100%;
   border: 0;
   border-radius: 5px;
+  font-size: var(--fontMed);
+  letter-spacing: -0.05em;
+  cursor: pointer;
 `;

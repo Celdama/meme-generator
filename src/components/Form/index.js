@@ -7,8 +7,8 @@ const Form = () => {
       <Content>
         <form action=''>
           <div>
-            <input type='text' />
-            <input type='text' />
+            <input placeholder='Top text' type='text' />
+            <input placeholder='Bottom text' type='text' />
           </div>
           <Button>Get a new meme image</Button>
         </form>
