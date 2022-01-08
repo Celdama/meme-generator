@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Wrapper, Content, Button } from './Form.styles';
 import memesData from '../../memesData';
 
 const Form = () => {
+  const [memeImg, setMemeImg] = useState('https://i.imgflip.com/25w3.jpg');
+
   const getMemeImg = (event) => {
     event.preventDefault();
     const memesArray = memesData.data.memes;
     const randomNumber = Math.floor(Math.random() * memesArray.length);
-    const { url } = memesArray[randomNumber];
-    console.log(url);
+    setMemeImg(memesArray[randomNumber].url);
+
+    document.querySelector('.display-meme-img').src = memeImg;
   };
 
   return (
@@ -20,6 +23,7 @@ const Form = () => {
             <input placeholder='Bottom text' type='text' />
           </div>
           <Button onClick={getMemeImg}>Get a new meme image</Button>
+          <img className='display-meme-img' src={memeImg} alt='meme' />
         </form>
       </Content>
     </Wrapper>
