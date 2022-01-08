@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.header`
+  display: flex;
+  justify-content: center;
   background: var(--mainGradient);
   padding: 20px;
   color: var(--white);
@@ -8,6 +10,9 @@ export const Wrapper = styled.header`
 
 export const Content = styled.nav`
   display: flex;
+  width: 100%;
+  max-width: var(--maxWidth);
+
   justify-content: space-between;
   align-items: center;
 
@@ -17,13 +22,13 @@ export const Content = styled.nav`
 
     h3 {
       font-weight: 500;
-      font-size: 20px;
+      font-size: var(--fontMed);
     }
   }
 
   h5 {
     font-weight: 300;
-    font-size: 14px;
+    font-size: var(--fontSmall);
   }
 `;
 
