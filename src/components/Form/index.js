@@ -23,8 +23,8 @@ const Form = () => {
             <input placeholder='Bottom text' type='text' />
           </div>
           <Button onClick={getMemeImg}>Get a new meme image</Button>
-          <img className='display-meme-img' src={memeImg} alt='meme' />
         </form>
+        <img className='display-meme-img' src={memeImg} alt='meme' />
       </Content>
     </Wrapper>
   );

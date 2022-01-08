@@ -10,6 +10,8 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   width: 100%;
   max-width: var(--maxWidth);
+  display: flex;
+  flex-direction: column;
 
   form {
     display: flex;
@@ -29,6 +31,12 @@ export const Content = styled.div`
         text-indent: 5px;
       }
     }
+  }
+  img {
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 480px;
+    align-self: center;
   }
 `;
 
