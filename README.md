@@ -14,7 +14,7 @@
 
 "Props" refers to the properties being passed into a component in order for it to work correctly, similar to how a function receives parameters: "from above". A component receiving props is not allowed to modify those props. (i.e they are "immutable")
 
-# Quizz
+# Quizz State / Props
 
 1. How would you describe the concept of "state"?
    Une facon pour React de se souvenir des valeurs sauvegardées à l'intérieur d'un component. Cela revient à déclarer des variables à l'intérieur d'un composant, avec quelques avantages supplémentaires.
