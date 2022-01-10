@@ -3,15 +3,27 @@ import { Wrapper, Content, Button } from './Form.styles';
 import memesData from '../../memesData';
 
 const Form = () => {
-  const [memeImg, setMemeImg] = useState('https://i.imgflip.com/25w3.jpg');
+  const [meme, setMeme] = useState({
+    topText: '',
+    bottomText: '',
+    randomImage: 'https://i.imgflip.com/25w3.jpg',
+  });
+
+  const [allMemeImages, setAllMemeImages] = useState(memesData);
 
   const getMemeImg = (event) => {
     event.preventDefault();
     const memesArray = memesData.data.memes;
     const randomNumber = Math.floor(Math.random() * memesArray.length);
-    setMemeImg(memesArray[randomNumber].url);
+    const url = allMemeImages.data.memes[randomNumber].url;
+    setMeme((prevState) => {
+      return {
+        ...prevState,
+        randomImage: url,
+      };
+    });
 
-    document.querySelector('.display-meme-img').src = memeImg;
+    document.querySelector('.display-meme-img').src = meme.randomImage;
   };
 
   return (
@@ -24,7 +36,7 @@ const Form = () => {
           </div>
           <Button onClick={getMemeImg}>Get a new meme image</Button>
         </form>
-        <img className='display-meme-img' src={memeImg} alt='meme' />
+        <img className='display-meme-img' src={meme.randomImage} alt='meme' />
       </Content>
     </Wrapper>
   );
