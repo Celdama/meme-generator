@@ -1,6 +1,7 @@
 // Composent inutile, je le garde dans le projet car il ma permit de saisir la notion de state, et de modification de state.
 
 import React, { useState } from 'react';
+import Count from '../Count';
 
 const Counter = () => {
   const [count, setCount] = useState(0);
@@ -26,7 +27,7 @@ const Counter = () => {
 
   return (
     <div>
-      <p>{count}</p>
+      <Count number={count} />
       <button onClick={decrementCounter}>-</button>
       <button onClick={incrementeCounter}>+</button>
     </div>
