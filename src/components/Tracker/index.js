@@ -12,9 +12,18 @@ const Tracker = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
+    const watchWidth = () => {
+      console.log('setting up...');
       setWindowWidth(window.innerWidth);
-    });
+    };
+
+    window.addEventListener('resize', watchWidth);
+
+    // clean up function
+    return () => {
+      console.log('cleaning up...');
+      window.removeEventListener('resize', watchWidth);
+    };
   }, []);
 
   return <h1>Window width: {windowWidth}</h1>;
