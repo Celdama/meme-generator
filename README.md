@@ -42,3 +42,12 @@
 
 3. When would you want to pass the second option to the state setter function ?
    Whenever you DO need the previous value to determine the new value.
+
+# RECAP what i learn in this app
+
+- event listener
+- state
+- conditionnal rendering
+- forms
+- side effects
+- useEffect - useState
