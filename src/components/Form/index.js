@@ -26,20 +26,44 @@ const Form = () => {
     document.querySelector('.display-meme-img').src = meme.randomImage;
   };
 
+  const handleChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    setMeme((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
+  };
+
+  const { topText, bottomText, randomImage } = meme;
   return (
     <Wrapper>
       <Content>
         <form action=''>
           <div>
-            <input placeholder='Top text' type='text' />
-            <input placeholder='Bottom text' type='text' />
+            <input
+              name='topText'
+              onChange={handleChange}
+              placeholder='Top text'
+              type='text'
+              value={topText}
+            />
+            <input
+              name='bottomText'
+              onChange={handleChange}
+              placeholder='Bottom text'
+              type='text'
+              value={bottomText}
+            />
           </div>
           <Button onClick={getMemeImg}>Get a new meme image</Button>
         </form>
         <div className='meme'>
-          <img className='display-meme-img' src={meme.randomImage} alt='meme' />
-          <h2 className='meme-text top'>One does not simply</h2>
-          <h2 className='meme-text bottom'>Walk into Mordor</h2>
+          <img className='display-meme-img' src={randomImage} alt='meme' />
+          <h2 className='meme-text top'>{topText}</h2>
+          <h2 className='meme-text bottom'>{bottomText}</h2>
         </div>
       </Content>
     </Wrapper>
