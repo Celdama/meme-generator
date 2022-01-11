@@ -36,7 +36,11 @@ const Form = () => {
           </div>
           <Button onClick={getMemeImg}>Get a new meme image</Button>
         </form>
-        <img className='display-meme-img' src={meme.randomImage} alt='meme' />
+        <div className='meme'>
+          <img className='display-meme-img' src={meme.randomImage} alt='meme' />
+          <h2 className='meme-text top'>One does not simply</h2>
+          <h2 className='meme-text bottom'>Walk into Mordor</h2>
+        </div>
       </Content>
     </Wrapper>
   );

@@ -32,11 +32,45 @@ export const Content = styled.div`
       }
     }
   }
-  img {
-    margin-top: 20px;
-    padding: 20px;
-    max-width: 480px;
-    align-self: center;
+  .meme {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    img {
+      margin-top: 20px;
+      padding: 20px;
+      max-width: 100%;
+      border-radius: 26px;
+      align-self: center;
+    }
+
+    .meme-text {
+      position: absolute;
+      width: 80%;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 15px 0;
+      padding: 0 5px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 2em;
+      text-transform: uppercase;
+      color: white;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+        -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000,
+        -2px 0 0 #000, 2px 2px 5px #000;
+    }
+
+    .bottom {
+      bottom: 16px;
+    }
+    .top {
+      top: 36px;
+    }
   }
 `;
 

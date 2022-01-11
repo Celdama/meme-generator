@@ -17,7 +17,7 @@ const Counter = () => {
    * value of state
    */
 
-  const incrementeCounter = () => {
+  const incrementCounter = () => {
     setCount((prevCount) => prevCount + 1);
   };
 
@@ -29,7 +29,7 @@ const Counter = () => {
     <div>
       <Count number={count} />
       <button onClick={decrementCounter}>-</button>
-      <button onClick={incrementeCounter}>+</button>
+      <button onClick={incrementCounter}>+</button>
     </div>
   );
 };
