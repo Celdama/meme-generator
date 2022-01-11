@@ -3,23 +3,37 @@ import React, { useState, useEffect } from 'react';
 
 const API = () => {
   const [starWarsData, setStarWarsData] = useState({});
+  const [count, setCount] = useState(1);
 
   // 1. GET the data (fetch)
   // 2. Save the data to state
 
   console.log('component rendered');
 
+  /**
+   * Challenge: Combine `count` with the request URL
+   * so pressing the "Get Next Character" button will
+   * get a new character from the Star Wars API.
+   * Remember: don't forget to consider the dependencies
+   * array!
+   */
+
   // side effects
   useEffect(() => {
-    console.log('effect');
+    console.log('effect ran');
 
-    fetch('https://swapi.dev/api/people/1').then((res) => res.json());
-    // .then((data) => setStarWarsData(data));
-  });
+    fetch(`https://swapi.dev/api/people/${count}`)
+      .then((res) => res.json())
+      .then((data) => setStarWarsData(data));
+  }, [count]);
 
   return (
     <div>
       <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+      <h2>the count is {count}</h2>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>
+        Next Character
+      </button>
     </div>
   );
 };
