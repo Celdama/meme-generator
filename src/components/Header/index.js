@@ -10,7 +10,6 @@ const Header = () => {
           <TrollFaceImg src={trollFaceIcon} alt='troll-face' />
           <h3>Meme Generator</h3>
         </div>
-        <h5>React Course - Project 3</h5>
       </Content>
     </Wrapper>
   );

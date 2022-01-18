@@ -1,3 +1,9 @@
+# Meme Generator
+
+Building his classic meme generator, updated with the newest React features.
+
+![preview](src/images/preview.png)
+
 # What we'll learn
 
 - event listener
